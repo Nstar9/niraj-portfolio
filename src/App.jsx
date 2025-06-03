@@ -21,22 +21,24 @@ export default function Portfolio() {
       </section>
 
        {/* About Section */}
-       <section className="text-center max-w-3xl mx-auto pt-12 space-y-4">
+      <section className="text-center max-w-3xl mx-auto pt-12 space-y-4">
         <h2 className="text-2xl font-semibold">About Me</h2>
         <p className="text-sm">
-          I'm a mechanical engineer turned tech strategist with an MS in Technology Management, passionate about building intelligent systems at the intersection of markets, data, cloud, and strategy. While I don't come with decades of experience, I bring something equally valuable: vision, velocity, and a deep discomfort with mediocrity.
+          I’m a <strong>mechanical engineer turned tech strategist</strong> with an <strong>MS in Technology Management</strong> — passionate about building intelligent systems at the intersection of <strong>markets, data, cloud, and strategy</strong>.<br />
+          While I may not bring decades of experience, I bring something equally valuable: <strong>vision, velocity</strong>, and a <strong>deep discomfort with mediocrity</strong>.
         </p>
         <p className="text-sm">
-          <strong>Technical Foundation:</strong> Proficient in Python, SQL, and AWS/cloud infrastructure with hands-on experience in product management and consulting. I'm especially drawn to applying quantitative methods, algorithmic thinking, and product intuition to understand market behavior, manage risk, and drive strategic decision-making.
+          <strong>Technical Foundation:</strong> I’m proficient in <strong>Python, SQL, and AWS/cloud infrastructure</strong>, with hands-on experience in <strong>product management</strong> and <strong>consulting</strong>. I’m especially drawn to applying <strong>quantitative methods, algorithmic thinking</strong>, and <strong>product intuition</strong> to understand market behavior, manage risk, and drive strategic decisions.
         </p>
         <p className="text-sm">
-          <strong>Leadership & Mindset:</strong> Strong leadership and people management skills fuel my approach to problem-solving. I thrive at the intersection of curiosity and execution—whether it's architecting cloud solutions, analyzing market data, or leading cross-functional teams toward ambitious goals.
+          <strong>Leadership & Mindset:</strong> I thrive at the intersection of <strong>curiosity and execution</strong> — whether it's architecting cloud solutions, analyzing market data, or leading <strong>cross-functional teams</strong> toward bold goals. Strong <strong>leadership and people skills</strong> fuel my problem-solving approach.
         </p>
         <p className="text-sm">
-          <strong>Focus Areas:</strong> Particularly interested in tech and fintech opportunities where I can leverage my unique blend of engineering rigor, strategic thinking, and product sense to create meaningful impact.
+          <strong>Focus Areas:</strong> I'm particularly interested in <strong>tech and fintech</strong> roles where I can combine <strong>engineering rigor, strategic thinking</strong>, and <strong>product sense</strong> to create meaningful impact.
         </p>
         <p className="text-sm">
-          I'm a voracious reader, pragmatic thinker, and relentless optimist who believes the best solutions emerge when you combine deep technical skills with strategic vision. If given the chance, I'll bring that same tenacious energy to your team. Let's build something unforgettable.
+          I’m a <strong>voracious reader</strong>, a <strong>pragmatic thinker</strong>, and a <strong>relentless optimist</strong>. I believe the best solutions emerge when deep technical expertise meets long-term strategic vision. If given the chance, I’ll bring that same tenacious energy to your team.<br />
+          Let’s build something unforgettable.
         </p>
       </section>
 
