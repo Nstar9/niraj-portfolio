@@ -27,13 +27,13 @@ export default function Portfolio() {
           I'm a mechanical engineer turned tech strategist with an MS in Technology Management, passionate about building intelligent systems at the intersection of markets, data, cloud, and strategy. While I don't come with decades of experience, I bring something equally valuable: vision, velocity, and a deep discomfort with mediocrity.
         </p>
         <p className="text-sm">
-          Technical Foundation: Proficient in Python, SQL, and AWS/cloud infrastructure with hands-on experience in product management and consulting. I'm especially drawn to applying quantitative methods, algorithmic thinking, and product intuition to understand market behavior, manage risk, and drive strategic decision-making.
+        <strong>Technical Foundation:<strong> Proficient in Python, SQL, and AWS/cloud infrastructure with hands-on experience in product management and consulting. I'm especially drawn to applying quantitative methods, algorithmic thinking, and product intuition to understand market behavior, manage risk, and drive strategic decision-making.
         </p>
         <p className="text-sm">
-          Leadership & Mindset: Strong leadership and people management skills fuel my approach to problem-solving. I thrive at the intersection of curiosity and execution—whether it's architecting cloud solutions, analyzing market data, or leading cross-functional teams toward ambitious goals.
+        <strong>Leadership & Mindset:<strong>Strong leadership and people management skills fuel my approach to problem-solving. I thrive at the intersection of curiosity and execution—whether it's architecting cloud solutions, analyzing market data, or leading cross-functional teams toward ambitious goals.
         </p>
         <p className="text-sm">
-          Focus Areas: Particularly interested in tech and fintech opportunities where I can leverage my unique blend of engineering rigor, strategic thinking, and product sense to create meaningful impact.
+        <strong>Focus Areas:<strong> Particularly interested in tech and fintech opportunities where I can leverage my unique blend of engineering rigor, strategic thinking, and product sense to create meaningful impact.
         </p>
         <p className="text-sm">
           I'm a voracious reader, pragmatic thinker, and relentless optimist who believes the best solutions emerge when you combine deep technical skills with strategic vision. If given the chance, I'll bring that same tenacious energy to your team. Let's build something unforgettable.
