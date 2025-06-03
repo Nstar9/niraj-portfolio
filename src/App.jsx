@@ -1,6 +1,4 @@
-import { Card, CardContent } from "../components/ui/card";
-import { Button } from "../components/ui/button";
-import { Github, Linkedin } from "lucide-react";
+
 
 export default function Portfolio() {
   return (
@@ -8,7 +6,7 @@ export default function Portfolio() {
       {/* Hero Section */}
       <section className="space-y-4 text-center">
         <img
-          src="/chicago-header.jpg"
+          src="/chicago-header.jpeg"
           alt="Niraj Patil Header"
           className="mx-auto rounded-2xl shadow-lg max-h-96 object-cover"
         />
@@ -17,12 +15,8 @@ export default function Portfolio() {
           Learning to Build Intelligent Systems at the Intersection of Markets, Data, Cloud, and Strategy.
         </p>
         <div className="flex justify-center gap-4">
-          <a href="https://github.com/Nstar9" target="_blank" rel="noopener noreferrer">
-            <Button variant="outline"><Github className="mr-2" /> GitHub</Button>
-          </a>
-          <a href="https://linkedin.com/in/nirajpatil01" target="_blank" rel="noopener noreferrer">
-            <Button variant="outline"><Linkedin className="mr-2" /> LinkedIn</Button>
-          </a>
+          <a href="https://github.com/Nstar9" target="_blank" rel="noopener noreferrer" className="px-4 py-2 border rounded shadow hover:bg-gray-100">GitHub</a>
+          <a href="https://linkedin.com/in/nirajpatil01" target="_blank" rel="noopener noreferrer" className="px-4 py-2 border rounded shadow hover:bg-gray-100">LinkedIn</a>
         </div>
       </section>
 
@@ -50,12 +44,44 @@ export default function Portfolio() {
       <section className="space-y-8">
         <h2 className="text-2xl font-semibold text-center">Featured Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card><CardContent className="p-4"><h3 className="text-xl font-bold">Insider Trading Alpha Detector</h3><p className="mt-2 text-sm">Real-time pipeline to detect alpha from insider trading data.</p><a href="https://github.com/Nstar9/insider-intel" className="text-blue-600 text-sm underline mt-2 inline-block" target="_blank">View Project →</a></CardContent></Card>
-          <Card><CardContent className="p-4"><h3 className="text-xl font-bold">Pairs Trading Quant Research</h3><p className="mt-2 text-sm">Identified cointegrated pairs and tested mean-reversion strategy with 12.5% annualized returns.</p><a href="https://github.com/Nstar9/Pairs-Trading-Quant-Research" className="text-blue-600 text-sm underline mt-2 inline-block" target="_blank">View Project →</a></CardContent></Card>
-          <Card><CardContent className="p-4"><h3 className="text-xl font-bold">Federated Healthcare System</h3><p className="mt-2 text-sm">Built a privacy-first recommendation system using federated learning on real patient data.</p><a href="https://github.com/Nstar9/Federated-Healthcare-Recommendation-System" className="text-blue-600 text-sm underline mt-2 inline-block" target="_blank">View Project →</a></CardContent></Card>
-          <Card><CardContent className="p-4"><h3 className="text-xl font-bold">Market Making Strategy (RL)</h3><p className="mt-2 text-sm">Built an order book simulator using LSTM and reinforcement learning to optimize trading spreads.</p><a href="https://github.com/Nstar9/Market-Making-Strategy" className="text-blue-600 text-sm underline mt-2 inline-block" target="_blank">View Project →</a></CardContent></Card>
-          <Card><CardContent className="p-4"><h3 className="text-xl font-bold">AWS Retail Data Pipeline</h3><p className="mt-2 text-sm">Simulated real-world retail analytics using Lambda, Step Functions, and SNS notifications.</p><a href="https://github.com/Nstar9/cloud-retail-aws" className="text-blue-600 text-sm underline mt-2 inline-block" target="_blank">View Project →</a></CardContent></Card>
-          <Card><CardContent className="p-4"><h3 className="text-xl font-bold">Pharma KPI Dashboard</h3><p className="mt-2 text-sm">Designed an interactive Tableau dashboard to monitor regional KPIs for a pharmaceutical brand.</p><a href="https://github.com/Nstar9/pharma-kpi-dashboard" className="text-blue-600 text-sm underline mt-2 inline-block" target="_blank">View Project →</a></CardContent></Card>
+          {[
+            {
+              title: "Insider Trading Alpha Detector",
+              desc: "Real-time pipeline to detect alpha from insider trading data.",
+              url: "https://github.com/Nstar9/insider-intel"
+            },
+            {
+              title: "Pairs Trading Quant Research",
+              desc: "Identified cointegrated pairs and tested mean-reversion strategy with 12.5% annualized returns.",
+              url: "https://github.com/Nstar9/Pairs-Trading-Quant-Research"
+            },
+            {
+              title: "Federated Healthcare System",
+              desc: "Built a privacy-first recommendation system using federated learning on real patient data.",
+              url: "https://github.com/Nstar9/Federated-Healthcare-Recommendation-System"
+            },
+            {
+              title: "Market Making Strategy (RL)",
+              desc: "Built an order book simulator using LSTM and reinforcement learning to optimize trading spreads.",
+              url: "https://github.com/Nstar9/Market-Making-Strategy"
+            },
+            {
+              title: "AWS Retail Data Pipeline",
+              desc: "Simulated real-world retail analytics using Lambda, Step Functions, and SNS notifications.",
+              url: "https://github.com/Nstar9/cloud-retail-aws"
+            },
+            {
+              title: "Pharma KPI Dashboard",
+              desc: "Designed an interactive Tableau dashboard to monitor regional KPIs for a pharmaceutical brand.",
+              url: "https://github.com/Nstar9/pharma-kpi-dashboard"
+            }
+          ].map((project) => (
+            <div className="p-4 rounded-xl border shadow-md" key={project.title}>
+              <h3 className="text-xl font-bold">{project.title}</h3>
+              <p className="mt-2 text-sm">{project.desc}</p>
+              <a href={project.url} className="text-blue-600 text-sm underline mt-2 inline-block" target="_blank">View Project →</a>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -63,18 +89,9 @@ export default function Portfolio() {
       <section className="text-center space-y-4 pt-12">
         <h2 className="text-2xl font-semibold">Skills</h2>
         <div className="flex flex-wrap justify-center gap-3 text-sm">
-          <span className="bg-gray-100 px-3 py-1 rounded-full">Python</span>
-          <span className="bg-gray-100 px-3 py-1 rounded-full">SQL</span>
-          <span className="bg-gray-100 px-3 py-1 rounded-full">Pandas</span>
-          <span className="bg-gray-100 px-3 py-1 rounded-full">NumPy</span>
-          <span className="bg-gray-100 px-3 py-1 rounded-full">AWS (RDS, S3, Lambda)</span>
-          <span className="bg-gray-100 px-3 py-1 rounded-full">Tableau</span>
-          <span className="bg-gray-100 px-3 py-1 rounded-full">Scikit-learn</span>
-          <span className="bg-gray-100 px-3 py-1 rounded-full">Product Management</span>
-          <span className="bg-gray-100 px-3 py-1 rounded-full">Quantitative Research</span>
-          <span className="bg-gray-100 px-3 py-1 rounded-full">Strategic Thinking</span>
-          <span className="bg-gray-100 px-3 py-1 rounded-full">GTM Strategy</span>
-          <span className="bg-gray-100 px-3 py-1 rounded-full">Storytelling</span>
+          {["Python", "SQL", "Pandas", "NumPy", "AWS (RDS, S3, Lambda)", "Tableau", "Scikit-learn", "Product Management", "Quantitative Research", "Strategic Thinking", "GTM Strategy", "Storytelling"].map(skill => (
+            <span key={skill} className="bg-gray-100 px-3 py-1 rounded-full">{skill}</span>
+          ))}
         </div>
       </section>
 
@@ -82,12 +99,8 @@ export default function Portfolio() {
       <section className="text-center pt-12">
         <h2 className="text-2xl font-semibold mb-4">Resumes</h2>
         <div className="flex justify-center flex-wrap gap-4">
-          <a href="/Niraj_Patil_Resume.pdf" download>
-            <Button variant="secondary">Data/Quant Resume</Button>
-          </a>
-          <a href="/Niraj_Patil_Resume_Product.pdf" download>
-            <Button variant="secondary">Product/Tech Resume</Button>
-          </a>
+          <a href="/Niraj_Patil_Resume.pdf" download className="px-4 py-2 border rounded shadow hover:bg-gray-100">Data/Quant Resume</a>
+          <a href="/Niraj_Patil_Resume_Product.pdf" download className="px-4 py-2 border rounded shadow hover:bg-gray-100">Product/Tech Resume</a>
         </div>
       </section>
 
@@ -96,12 +109,8 @@ export default function Portfolio() {
         <h2 className="text-2xl font-semibold mb-2">Let's Connect</h2>
         <p className="text-sm mb-4">Whether you're hiring, collaborating, or just exploring ideas — reach out!</p>
         <div className="flex justify-center gap-4">
-          <a href="mailto:bnirajpatil9@gmail.com">
-            <Button variant="outline">Email</Button>
-          </a>
-          <a href="https://linkedin.com/in/nirajpatil01" target="_blank">
-            <Button variant="outline">LinkedIn</Button>
-          </a>
+          <a href="mailto:bnirajpatil9@gmail.com" className="px-4 py-2 border rounded shadow hover:bg-gray-100">Email</a>
+          <a href="https://linkedin.com/in/nirajpatil01" target="_blank" className="px-4 py-2 border rounded shadow hover:bg-gray-100">LinkedIn</a>
         </div>
       </section>
     </div>
