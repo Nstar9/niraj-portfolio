@@ -8,7 +8,7 @@ export default function App() {
       <motion.section initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-center space-y-4">
         <h1 className="text-5xl font-bold">Niraj Patil</h1>
         <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-          Quant, Product, and Code — Building at the intersection of Markets, Math, and Meaning.
+        Learning to Build Intelligent Systems at the Intersection of Markets, Data, Cloud, and Strategy
         </p>
         <div className="flex justify-center gap-4 mt-4">
           <a href="https://github.com/Nstar9" target="_blank" rel="noopener noreferrer">
@@ -24,9 +24,12 @@ export default function App() {
       <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="max-w-3xl mx-auto space-y-6 text-center">
         <h2 className="text-3xl font-semibold">About Me</h2>
         <p className="text-sm">
-          From Mechanical Engineering in Mumbai to Technology Management at UIUC — I blend quantitative reasoning, product thinking,
-          and data science to build intelligent systems. Whether it’s decoding insider trades, simulating markets, or shipping AWS pipelines,
-          my goal is to solve real problems with smart code.
+        About: I'm a mechanical engineer turned tech strategist with an MS in Technology Management, passionate about building intelligent systems at the intersection of markets, data, cloud, and strategy. While I don't come with decades of experience, I bring something equally valuable: vision, velocity, and a deep discomfort with mediocrity.
+        Technical Foundation: Proficient in Python, SQL, and AWS/cloud infrastructure with hands-on experience in product management and consulting. I'm especially drawn to applying quantitative methods, algorithmic thinking, and product intuition to understand market behavior, manage risk, and drive strategic decision-making.
+        Leadership & Mindset: Strong leadership and people management skills fuel my approach to problem-solving. I thrive at the intersection of curiosity and execution—whether it's architecting cloud solutions, analyzing market data, or leading cross-functional teams toward ambitious goals.
+        Focus Areas: Particularly interested in tech and fintech opportunities where I can leverage my unique blend of engineering rigor, strategic thinking, and product sense to create meaningful impact.
+        I'm a voracious reader, pragmatic thinker, and relentless optimist who believes the best solutions emerge when you combine deep technical skills with strategic vision. If given the chance, I'll bring that same tenacious energy to your team.
+        Let's build something unforgettable.
         </p>
       </motion.section>
 
@@ -58,13 +61,7 @@ export default function App() {
         </div>
       </motion.section>
 
-      {/* BLOG SECTION */}
-      <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="max-w-3xl mx-auto space-y-6 text-center">
-        <h2 className="text-3xl font-semibold">Blog</h2>
-        <p className="text-sm text-gray-600 dark:text-gray-300">
-          Coming soon: Short essays on trading, product, and the art of building for impact.
-        </p>
-      </motion.section>
+      
 
       {/* CONTACT SECTION */}
       <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="max-w-xl mx-auto text-center">
