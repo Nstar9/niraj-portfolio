@@ -1,118 +1,326 @@
+import React from "react";
 
+// --- Project Data
+const projects = [
+  {
+    title: "Insider Alpha — Financial Intelligence Platform",
+    problem: "Investment firms need real-time insights from regulatory filings.",
+    solution: "Real-time pipeline analyzing insider trading patterns for alpha generation.",
+    impact: "Enables faster investment decisions, potential 15–20% portfolio improvement.",
+    role: "Product strategy, user experience design, technical architecture.",
+    url: "https://github.com/Nstar9/insider-intel",
+    tech: ["Python", "Airflow", "Pandas"],
+  },
+  {
+    title: "Pairs Trading Quant Research",
+    problem: "Quant funds seek robust, low-correlation trading strategies.",
+    solution: "Statistical arbitrage using cointegrated pairs; mean-reversion backtests.",
+    impact: "12.5% annualized returns. Used for model-driven trading ideas.",
+    role: "Full pipeline: data, research, evaluation, reporting.",
+    url: "https://github.com/Nstar9/Pairs-Trading-Quant-Research",
+    tech: ["Python", "StatsModels"],
+  },
+  {
+    title: "Options Pricing & Greeks Calculator",
+    problem: "Traders and students need real-time option analytics.",
+    solution: "European options pricing model + Greeks, Monte Carlo simulations.",
+    impact: "Enhanced trading analysis, learning outcomes.",
+    role: "Product design, Python development, UI, docs.",
+    url: "https://github.com/Nstar9/Options-Pricing-Greeks",
+    tech: ["Python", "Finance", "Monte Carlo"],
+  },
+  {
+    title: "Federated Healthcare Recommendation System",
+    problem: "Healthcare data privacy hinders collaborative learning.",
+    solution: "Federated learning for privacy-safe recommendations.",
+    impact: "Improved recommendations, no patient data leaks.",
+    role: "Tech lead, ML design, product owner.",
+    url: "https://github.com/Nstar9/Federated-Healthcare-Recommendation-System",
+    tech: ["PyTorch", "Federated"],
+  },
+  {
+    title: "Market Making Strategy (RL)",
+    problem: "Market makers seek to optimize spreads and inventory risk.",
+    solution: "Order-book simulator and RL agent for automated quoting.",
+    impact: "Demonstrated RL in high-frequency trading context.",
+    role: "All technical + research + reporting.",
+    url: "https://github.com/Nstar9/Market-Making-Strategy",
+    tech: ["TensorFlow", "RL"],
+  },
+  {
+    title: "Fraud Detection System",
+    problem: "Banks need real-time fraud risk scoring for transactions.",
+    solution: "Real-time fraud monitoring, ML-based risk scoring, explainable outputs.",
+    impact: "Improved fraud detection rates, reduced losses.",
+    role: "Python dev, feature design, project manager.",
+    url: "https://github.com/Nstar9/fraud-detection-system",
+    tech: ["Python", "SQL", "ML"],
+  },
+  {
+    title: "Stock Market Data Pipeline",
+    problem: "Analysts require automated, robust stock data ingestion.",
+    solution: "Automated extraction & processing from Yahoo Finance API.",
+    impact: "Reliable, up-to-date financial research.",
+    role: "Backend, scheduling, deployment.",
+    url: "https://github.com/Nstar9/Stock-Market-Data-Pipeline",
+    tech: ["Python", "APIs"],
+  },
+  {
+    title: "Pharma KPI Dashboard",
+    problem: "Regional pharma teams need unified, interactive KPIs.",
+    solution: "Interactive Tableau dashboard for sales & ops.",
+    impact: "Improved visibility, better regional decision-making.",
+    role: "Data viz, dashboard design.",
+    url: "https://github.com/Nstar9/pharma-kpi-dashboard",
+    tech: ["Tableau", "SQL"],
+  },
+  {
+    title: "Personal Finance Calculator",
+    problem: "Individuals want to model budgets & savings plans.",
+    solution: "Web app for simple finance modeling.",
+    impact: "Helped users forecast savings & plan goals.",
+    role: "Product + dev.",
+    url: "https://github.com/Nstar9/Personal-Finance-Calculator",
+    tech: ["Python"],
+  },
+];
+
+// --- Skills, Certs, Info Badges
+const skillGroups = [
+  {
+    title: "TECHNICAL SKILLS",
+    color: "bg-blue-50 border-blue-300 text-blue-900",
+    items: [
+      "Python (Advanced)", "SQL (Advanced)",
+      "AWS (EC2, S3, Lambda, RDS)",
+      "Pandas", "NumPy", "Data Visualization",
+      "Jira", "Figma", "Analytics Platforms"
+    ]
+  },
+  {
+    title: "BUSINESS & LEADERSHIP SKILLS",
+    color: "bg-orange-50 border-orange-300 text-orange-900",
+    items: [
+      "Product Management & Strategy",
+      "Cross-functional Team Leadership",
+      "Stakeholder Management & Communication",
+      "Agile/Scrum Methodologies"
+    ]
+  }
+];
+
+const certs = [
+  { name: "IBM AI Product Manager (2025)", color: "bg-orange-100 text-orange-900 border-orange-400" },
+  { name: "AWS Solutions Architect Associate (In Progress)", color: "bg-teal-100 text-teal-900 border-teal-400" },
+  { name: "Advanced SQL", color: "bg-blue-100 text-blue-900 border-blue-400" },
+  { name: "Data Science Specialization", color: "bg-purple-100 text-purple-900 border-purple-400" }
+];
+
+const infobadges = [
+  { icon: "📍", label: "Chicago, IL", color: "bg-gray-100 text-gray-700 border-gray-300" },
+  { icon: "🎓", label: "MS Tech Mgmt @ UIUC", color: "bg-blue-100 text-blue-900 border-blue-400" },
+  { icon: "🏆", label: "IBM AI PM Certified", color: "bg-orange-100 text-orange-900 border-orange-400" },
+  { icon: "⚡", label: "AWS SAA (In Progress)", color: "bg-teal-100 text-teal-900 border-teal-400" },
+  { icon: "💼", label: "Senior Consultant", color: "bg-green-100 text-green-900 border-green-400" },
+  { icon: "🔧", label: "Python | SQL | AWS | Strategy", color: "bg-purple-100 text-purple-900 border-purple-400" }
+];
 
 export default function Portfolio() {
   return (
-    <div className="min-h-screen bg-white text-black p-8 space-y-12 font-sans">
-      {/* Hero Section */}
-      <section className="space-y-4 text-center">
-        <img
-          src="/chicago-header.jpeg"
-          alt="Niraj Patil Header"
-          className="mx-auto rounded-2xl shadow-lg max-h-96 object-cover"
-        />
-        <h1 className="text-4xl font-bold">Niraj Patil</h1>
-        <p className="text-lg max-w-2xl mx-auto">
-          Learning to Build Intelligent Systems at the Intersection of Markets, Data, Cloud, and Strategy.
-        </p>
-        <div className="flex justify-center gap-4">
-          <a href="https://github.com/Nstar9" target="_blank" rel="noopener noreferrer" className="px-4 py-2 border rounded shadow hover:bg-gray-100">GitHub</a>
-          <a href="https://linkedin.com/in/nirajpatil01" target="_blank" rel="noopener noreferrer" className="px-4 py-2 border rounded shadow hover:bg-gray-100">LinkedIn</a>
+    <div className="font-sans bg-white text-gray-900 scroll-smooth">
+      {/* Sticky Nav */}
+      <nav className="sticky top-0 z-50 bg-[#0a2540] text-white shadow-md">
+        <ul className="flex flex-wrap justify-center gap-6 py-4 text-sm md:text-base">
+          <li><a href="#hero" className="hover:text-teal-400">Home</a></li>
+          <li><a href="#skills" className="hover:text-teal-400">Skills & Certs</a></li>
+          <li><a href="#about" className="hover:text-teal-400">About</a></li>
+          <li><a href="#experience" className="hover:text-teal-400">Experience</a></li>
+          <li><a href="#projects" className="hover:text-teal-400">Projects</a></li>
+          <li><a href="#case-studies" className="hover:text-teal-400">Case Studies</a></li>
+          <li><a href="#resume" className="hover:text-teal-400">Resume</a></li>
+          <li><a href="#contact" className="hover:text-teal-400">Contact</a></li>
+        </ul>
+      </nav>
+
+      {/* Hero */}
+      <header id="hero" className="min-h-[40vh] flex flex-col items-center justify-center px-8 py-12 text-center bg-gradient-to-b from-white to-gray-50 space-y-6">
+        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#0a2540] mb-2">
+          Niraj Patil
+        </h1>
+        <h2 className="text-lg md:text-xl font-medium mb-2 text-gray-700">
+          Technical Product Manager | Building Intelligent Systems at the Intersection of Technology, Markets, Data, Cloud, and Business Strategy
+        </h2>
+        <div className="flex flex-wrap gap-2 justify-center mb-2">
+          {infobadges.map(badge => (
+            <span key={badge.label} className={`inline-flex items-center px-3 py-1 border rounded-full text-xs font-semibold mr-1 mb-2 ${badge.color}`}>
+              <span className="mr-1">{badge.icon}</span>{badge.label}
+            </span>
+          ))}
+        </div>
+        <div className="flex gap-4 mt-2 justify-center">
+          <a href="https://github.com/Nstar9" target="_blank" rel="noopener noreferrer" className="px-6 py-2 rounded shadow bg-blue-100 hover:bg-blue-200 text-blue-800 border border-blue-200 font-semibold transition">GitHub</a>
+          <a href="https://linkedin.com/in/nirajpatil01" target="_blank" rel="noopener noreferrer" className="px-6 py-2 rounded shadow bg-teal-100 hover:bg-teal-200 text-teal-800 border border-teal-200 font-semibold transition">LinkedIn</a>
+        </div>
+      </header>
+
+      {/* Skills & Certs */}
+      <section id="skills" className="py-12 px-6 bg-white text-center space-y-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {skillGroups.map(group => (
+            <div key={group.title} className={`rounded-xl border shadow-sm p-6 ${group.color}`}>
+              <h3 className="font-bold text-lg mb-3 tracking-wide">{group.title}</h3>
+              <div className="flex flex-wrap gap-2 justify-center">
+                {group.items.map(item => (
+                  <span key={item} className="px-3 py-1 bg-white border rounded-full text-xs font-medium shadow-sm">{item}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="flex flex-wrap gap-4 justify-center mt-6">
+          {certs.map(cert => (
+            <span key={cert.name} className={`px-4 py-2 rounded-xl border shadow font-semibold text-sm ${cert.color}`}>{cert.name}</span>
+          ))}
         </div>
       </section>
 
-       {/* About Section */}
-      <section className="text-center max-w-3xl mx-auto pt-12 space-y-4">
-        <h2 className="text-2xl font-semibold">About Me</h2>
-        <p className="text-sm">
-          I’m a <strong>mechanical engineer turned tech strategist</strong> with an <strong>MS in Technology Management</strong> — passionate about building intelligent systems at the intersection of <strong>markets, data, cloud, and strategy</strong>.<br />
-          While I may not bring decades of experience, I bring something equally valuable: <strong>vision, velocity</strong>, and a <strong>deep discomfort with mediocrity</strong>.
-        </p>
-        <p className="text-sm">
-          <strong>Technical Foundation:</strong> I’m proficient in <strong>Python, SQL, and AWS/cloud infrastructure</strong>, with hands-on experience in <strong>product management</strong> and <strong>consulting</strong>. I’m especially drawn to applying <strong>quantitative methods, algorithmic thinking</strong>, and <strong>product intuition</strong> to understand market behavior, manage risk, and drive strategic decisions.
-        </p>
-        <p className="text-sm">
-          <strong>Leadership & Mindset:</strong> I thrive at the intersection of <strong>curiosity and execution</strong> — whether it's architecting cloud solutions, analyzing market data, or leading <strong>cross-functional teams</strong> toward bold goals. Strong <strong>leadership and people skills</strong> fuel my problem-solving approach.
-        </p>
-        <p className="text-sm">
-          <strong>Focus Areas:</strong> I'm particularly interested in <strong>tech and fintech</strong> roles where I can combine <strong>engineering rigor, strategic thinking</strong>, and <strong>product sense</strong> to create meaningful impact.
-        </p>
-        <p className="text-sm">
-          I’m a <strong>voracious reader</strong>, a <strong>pragmatic thinker</strong>, and a <strong>relentless optimist</strong>. I believe the best solutions emerge when deep technical expertise meets long-term strategic vision. If given the chance, I’ll bring that same tenacious energy to your team.<br />
-          Let’s build something unforgettable.
-        </p>
+      {/* About (Pic left, Text right) */}
+      <section id="about" className="flex flex-col md:flex-row items-center justify-center gap-12 px-8 py-16 max-w-6xl mx-auto bg-gray-50 rounded-2xl my-10">
+        <img
+          src="/chicago-header.jpeg"
+          alt="Niraj Patil"
+          className="w-48 h-48 md:w-60 md:h-60 object-cover rounded-2xl shadow-lg border-4 border-[#0a2540]"
+        />
+        <div className="max-w-xl space-y-5 text-left">
+          <p className="text-lg md:text-xl font-bold text-[#0a2540] mb-2">
+            I’m a Technical Product Manager with a unique blend of engineering, consulting, and technology management experience.
+          </p>
+          <p className="text-base md:text-lg">
+            Currently completing my <b>MS in Technology Management at UIUC</b>, I specialize in building data-driven products that solve complex business problems.<br />
+            My background spans <b>mechanical engineering, pharmaceutical industry</b> experience, and hands-on technical projects in <b>AI, cloud, and data analytics</b>. I bring both <b>technical depth</b> (Python, SQL, AWS) and <b>strategic thinking</b> to product development and cross-functional leadership.
+          </p>
+          <p className="text-base md:text-lg">
+            <b>What sets me apart:</b> I bridge the gap between technical possibility and business impact. Whether it’s architecting cloud solutions, analyzing market data, or leading product strategy, I thrive at the intersection of <b>technology and business strategy</b>.
+          </p>
+          <p className="text-base md:text-lg">
+            I’m seeking <b>Technical Product Manager roles</b> where I can leverage my <b>analytical mindset, leadership experience, and passion for building products</b> that scale and create meaningful impact.
+          </p>
+        </div>
       </section>
 
-      {/* Projects Section */}
-      <section className="space-y-8">
-        <h2 className="text-2xl font-semibold text-center">Featured Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {[
-            {
-              title: "Insider Trading Alpha Detector",
-              desc: "Real-time pipeline to detect alpha from insider trading data.",
-              url: "https://github.com/Nstar9/insider-intel"
-            },
-            {
-              title: "Pairs Trading Quant Research",
-              desc: "Identified cointegrated pairs and tested mean-reversion strategy with 12.5% annualized returns.",
-              url: "https://github.com/Nstar9/Pairs-Trading-Quant-Research"
-            },
-            {
-              title: "Federated Healthcare System",
-              desc: "Built a privacy-first recommendation system using federated learning on real patient data.",
-              url: "https://github.com/Nstar9/Federated-Healthcare-Recommendation-System"
-            },
-            {
-              title: "Market Making Strategy (RL)",
-              desc: "Built an order book simulator using LSTM and reinforcement learning to optimize trading spreads.",
-              url: "https://github.com/Nstar9/Market-Making-Strategy"
-            },
-            {
-              title: "AWS Retail Data Pipeline",
-              desc: "Simulated real-world retail analytics using Lambda, Step Functions, and SNS notifications.",
-              url: "https://github.com/Nstar9/cloud-retail-aws"
-            },
-            {
-              title: "Pharma KPI Dashboard",
-              desc: "Designed an interactive Tableau dashboard to monitor regional KPIs for a pharmaceutical brand.",
-              url: "https://github.com/Nstar9/pharma-kpi-dashboard"
-            }
-          ].map((project) => (
-            <div className="p-4 rounded-xl border shadow-md" key={project.title}>
-              <h3 className="text-xl font-bold">{project.title}</h3>
-              <p className="mt-2 text-sm">{project.desc}</p>
-              <a href={project.url} className="text-blue-600 text-sm underline mt-2 inline-block" target="_blank">View Project →</a>
+      {/* Experience & Education */}
+      <section id="experience" className="max-w-6xl mx-auto px-8 py-12 grid md:grid-cols-2 gap-12 items-start">
+        {/* Experience */}
+        <div>
+          <h2 className="text-2xl font-bold text-[#0a2540] mb-4">Experience</h2>
+          <div className="mb-6">
+            <h3 className="font-semibold text-lg">Senior Consultant | Faces Consulting</h3>
+            <p className="text-sm text-gray-500">Sep 2024 - Present</p>
+            <ul className="list-disc ml-6 mt-2 text-base space-y-1">
+              <li>Led strategic consulting projects with cross-functional teams</li>
+              <li>Developed data-driven recommendations for business optimization</li>
+              <li>Managed client relationships and project deliverables</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-semibold text-lg">Product Development Engineer | Process Industries</h3>
+            <p className="text-sm text-gray-500">2022-2023</p>
+            <ul className="list-disc ml-6 mt-2 text-base space-y-1">
+              <li>Managed product development lifecycle in regulated environment</li>
+              <li>Led cross-functional teams and stakeholder alignment</li>
+              <li>Optimized complex systems and processes for efficiency and compliance</li>
+              <li>Developed expertise in quality management and risk assessment</li>
+            </ul>
+          </div>
+        </div>
+        {/* Education */}
+        <div>
+          <h2 className="text-2xl font-bold text-[#0a2540] mb-4">Education</h2>
+          <div className="mb-6">
+            <h3 className="font-semibold text-lg">MS Technology Management — UIUC</h3>
+            <p className="text-sm text-gray-500">Expected Aug 2025</p>
+            <p className="text-base">Relevant Coursework: Data Science, Big Data Infrastructure, Business Strategy</p>
+          </div>
+          <div>
+            <h3 className="font-semibold text-lg">BE Mechanical Engineering — Mumbai University</h3>
+            <p className="text-sm text-gray-500">Graduated 2022</p>
+            <p className="text-base">Focus: Product Design, Systems Analysis</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Technical Projects */}
+      <section id="projects" className="py-16 px-8 bg-white">
+        <h2 className="text-3xl font-semibold text-center text-[#0a2540] mb-10">Featured Technical Projects</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {projects.map((proj) => (
+            <div key={proj.title} className="p-6 rounded-2xl border-2 border-gray-100 shadow hover:shadow-lg bg-gray-50 flex flex-col justify-between">
+              <div>
+                <h3 className="text-xl font-bold text-teal-700 mb-1">{proj.title}</h3>
+                <div className="text-xs mb-2">
+                  {proj.tech.map((t, i) => (
+                    <span key={i} className="inline-block bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full mr-1 mb-1">{t}</span>
+                  ))}
+                </div>
+                <p className="text-sm text-gray-700"><b>Problem:</b> {proj.problem}</p>
+                <p className="text-sm text-gray-700"><b>Solution:</b> {proj.solution}</p>
+                <p className="text-sm text-gray-700"><b>Business Impact:</b> {proj.impact}</p>
+                <p className="text-xs text-gray-500 mt-1"><b>Your Role:</b> {proj.role}</p>
+              </div>
+              <a href={proj.url} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block text-teal-700 text-sm underline font-semibold">View Project →</a>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Skills Section */}
-      <section className="text-center space-y-4 pt-12">
-        <h2 className="text-2xl font-semibold">Skills</h2>
-        <div className="flex flex-wrap justify-center gap-3 text-sm">
-          {["Python", "SQL", "Pandas", "NumPy", "AWS (RDS, S3, Lambda)", "Tableau", "Scikit-learn", "Product Management", "Quantitative Research", "Strategic Thinking", "GTM Strategy", "Storytelling"].map(skill => (
-            <span key={skill} className="bg-gray-100 px-3 py-1 rounded-full">{skill}</span>
-          ))}
+      {/* Product Case Studies */}
+      <section id="case-studies" className="py-16 px-8 space-y-12 bg-gray-50">
+        <h2 className="text-3xl font-semibold text-center text-[#0a2540] mb-8">Product Case Studies</h2>
+        {/* Case Study 1 */}
+        <article className="max-w-5xl mx-auto grid md:grid-cols-5 gap-8 items-center mb-10">
+          <div className="md:col-span-2 flex items-center justify-center bg-white border border-gray-200 rounded-xl h-56 text-gray-400">
+            <span className="text-center px-4">[ Airline Crisis Recovery Platform Mockup ]</span>
+          </div>
+          <div className="md:col-span-3 space-y-3 text-sm md:text-base">
+            <h3 className="text-xl font-bold text-teal-600">AI-Powered Crisis Recovery Platform for Airlines</h3>
+            <p><b>Problem:</b> Airlines recover slowly from large-scale disruptions.</p>
+            <p><b>Solution:</b> Optimization engine reallocating crew/aircraft via ML.</p>
+            <p><b>Impact:</b> 25% faster recovery, $15M saved annually.</p>
+            <p><b>Your Role:</b> Product strategy, KPIs, roadmap.</p>
+          </div>
+        </article>
+        {/* Case Study 2 */}
+        <article className="max-w-5xl mx-auto grid md:grid-cols-5 gap-8 items-center">
+          <div className="md:col-span-2 flex items-center justify-center bg-white border border-gray-200 rounded-xl h-56 text-gray-400">
+            <span className="text-center px-4">[ Digital Banking Risk Platform Mockup ]</span>
+          </div>
+          <div className="md:col-span-3 space-y-3 text-sm md:text-base">
+            <h3 className="text-xl font-bold text-teal-600">AI-Powered Risk Management Platform for Digital Banking</h3>
+            <p><b>Problem:</b> Difficulty detecting fraud in real-time.</p>
+            <p><b>Solution:</b> ML platform analyzing transactions & behavior.</p>
+            <p><b>Impact:</b> 60% fewer false positives, 40% faster detection.</p>
+            <p><b>Your Role:</b> Feature prioritization, stakeholder alignment.</p>
+          </div>
+        </article>
+      </section>
+
+      {/* Resume */}
+      <section id="resume" className="py-20 px-8 text-center bg-white">
+        <h2 className="text-3xl font-semibold text-[#0a2540] mb-6">Resume</h2>
+        <div className="flex justify-center flex-wrap gap-6">
+          <a href="/Niraj_Patil_Resume_Product.pdf" download className="px-6 py-3 border rounded-xl shadow hover:bg-teal-50 text-base font-semibold text-teal-900 bg-teal-100">
+            Product/Tech Resume
+          </a>
         </div>
       </section>
 
-      {/* Resume Section */}
-      <section className="text-center pt-12">
-        <h2 className="text-2xl font-semibold mb-4">Resumes</h2>
-        <div className="flex justify-center flex-wrap gap-4">
-          <a href="/Niraj_Patil_Resume.pdf" download className="px-4 py-2 border rounded shadow hover:bg-gray-100">Data/Quant Resume</a>
-          <a href="/Niraj_Patil_Resume_Product.pdf" download className="px-4 py-2 border rounded shadow hover:bg-gray-100">Product/Tech Resume</a>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section className="text-center pt-12">
-        <h2 className="text-2xl font-semibold mb-2">Let's Connect</h2>
-        <p className="text-sm mb-4">Whether you're hiring, collaborating, or just exploring ideas — reach out!</p>
+      {/* Contact */}
+      <section id="contact" className="py-20 px-8 text-center bg-gray-50">
+        <h2 className="text-3xl font-semibold text-[#0a2540] mb-6">Let's Connect</h2>
+        <p className="text-base mb-6">Whether you're hiring, collaborating, or just exploring ideas — reach out!</p>
         <div className="flex justify-center gap-4">
-          <a href="mailto:bnirajpatil9@gmail.com" className="px-4 py-2 border rounded shadow hover:bg-gray-100">Email</a>
-          <a href="https://linkedin.com/in/nirajpatil01" target="_blank" className="px-4 py-2 border rounded shadow hover:bg-gray-100">LinkedIn</a>
+          <a href="mailto:bnirajpatil9@gmail.com" className="px-6 py-2 border border-gray-300 rounded shadow hover:bg-gray-100 text-base font-medium">Email</a>
+          <a href="https://linkedin.com/in/nirajpatil01" target="_blank" rel="noopener noreferrer" className="px-6 py-2 border border-gray-300 rounded shadow hover:bg-gray-100 text-base font-medium">LinkedIn</a>
         </div>
       </section>
     </div>
