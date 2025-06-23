@@ -99,7 +99,7 @@ const skillGroups = [
   },
   {
     title: "BUSINESS & LEADERSHIP SKILLS",
-    color: "bg-orange-50 border-orange-300 text-orange-900",
+    color: "bg-blue-50 border-blue-300 text-blue-900",
     items: [
       "Product Management & Strategy",
       "Cross-functional Team Leadership",
@@ -110,29 +110,29 @@ const skillGroups = [
 ];
 
 const certs = [
-  { name: "IBM AI Product Manager (2025)", color: "bg-orange-100 text-orange-900 border-orange-400" },
-  { name: "AWS Solutions Architect Associate (In Progress)", color: "bg-teal-100 text-teal-900 border-teal-400" },
-  { name: "Advanced SQL", color: "bg-blue-100 text-blue-900 border-blue-400" },
-  { name: "Data Science Specialization", color: "bg-purple-100 text-purple-900 border-purple-400" }
+  { name: "IBM AI Product Manager (2025)", color: "bg-yellow-100 text-black-900 border-yellow-400" },
+  { name: "AWS Solutions Architect Associate (In Progress)", color: "bg-yellow-100 text-black-900 border-yellow-400" },
+  { name: "Cognizant - Agile Methodology", color: "bg-yellow-100 text-black-900 border-yellow-400" },
+  { name: "Data Science Specialization", color: "bg-yellow-100 text-black-900 border-yellow-400" }
 ];
 
 const infobadges = [
   { icon: "📍", label: "Chicago, IL", color: "bg-gray-100 text-gray-700 border-gray-300" },
   { icon: "🎓", label: "MS Tech Mgmt @ UIUC", color: "bg-blue-100 text-blue-900 border-blue-400" },
-  { icon: "🏆", label: "IBM AI PM Certified", color: "bg-orange-100 text-orange-900 border-orange-400" },
-  { icon: "⚡", label: "AWS SAA (In Progress)", color: "bg-teal-100 text-teal-900 border-teal-400" },
-  { icon: "💼", label: "Senior Consultant", color: "bg-green-100 text-green-900 border-green-400" },
-  { icon: "🔧", label: "Python | SQL | AWS | Strategy", color: "bg-purple-100 text-purple-900 border-purple-400" }
+  { icon: "💼", label: "Senior Consultant", color: "bg-pink-100 text-pink-900 border-pink-400" },
+  { icon: "🔧", label: "Python | SQL | AWS | Strategy", color: "bg-purple-100 text-purple-900 border-purple-400" },
+  { icon: "🏆", label: "IBM AI PM Certified", color: "bg-pink-100 text-pink-900 border-pink-400" },
+  { icon: "⚡", label: "AWS SAA (In Progress)", color: "bg-purple-100 text-purple-900 border-purple-400" },
 ];
 
 export default function Portfolio() {
   return (
-    <div className="font-sans bg-white text-gray-900 scroll-smooth">
+    <div className="font-sans bg-grey text-black-900 scroll-smooth">
       {/* Sticky Nav */}
       <nav className="sticky top-0 z-50 bg-[#0a2540] text-white shadow-md">
         <ul className="flex flex-wrap justify-center gap-6 py-4 text-sm md:text-base">
-          <li><a href="#hero" className="hover:text-teal-400">Home</a></li>
-          <li><a href="#skills" className="hover:text-teal-400">Skills & Certs</a></li>
+          <li><a href="#hero" className="hover:text-black-400">Home</a></li>
+          <li><a href="#skills" className="hover:text-black-400">Skills & Certs</a></li>
           <li><a href="#about" className="hover:text-teal-400">About</a></li>
           <li><a href="#experience" className="hover:text-teal-400">Experience</a></li>
           <li><a href="#projects" className="hover:text-teal-400">Projects</a></li>
@@ -143,23 +143,26 @@ export default function Portfolio() {
       </nav>
 
       {/* Hero */}
-      <header id="hero" className="min-h-[40vh] flex flex-col items-center justify-center px-8 py-12 text-center bg-gradient-to-b from-white to-gray-50 space-y-6">
-        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#0a2540] mb-2">
+      <header id="hero" className="min-h-[40vh] flex flex-col items-center justify-center px-8 py-12 text-center bg-gradient-to-b from-white to-gray-50 space-y-3">
+        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#0a2540] mb-0">
           Niraj Patil
         </h1>
-        <h2 className="text-lg md:text-xl font-medium mb-2 text-gray-700">
-          Technical Product Manager | Building Intelligent Systems at the Intersection of Technology, Markets, Data, Cloud, and Business Strategy
+        <h2 className="text-base md:text-lg font-semibold text-gray-800 mb-1 mt-1">
+          Technical Product Manager
         </h2>
-        <div className="flex flex-wrap gap-2 justify-center mb-2">
+        <h3 className="text-sm md:text-base font-medium text-[#0a2540] mt-0 mb-2">
+          Building Intelligent Systems at the Intersection of AI, Markets, Data, Cloud & Strategy
+        </h3>
+        <div className="flex flex-wrap gap-2 justify-center mb-2 mt-2">
           {infobadges.map(badge => (
-            <span key={badge.label} className={`inline-flex items-center px-3 py-1 border rounded-full text-xs font-semibold mr-1 mb-2 ${badge.color}`}>
+            <span key={badge.label} className={`inline-flex items-center px-3 py-1 border-2 rounded-full text-xs font-bold mr-1 mb-2 ${badge.color}`}>
               <span className="mr-1">{badge.icon}</span>{badge.label}
             </span>
           ))}
         </div>
         <div className="flex gap-4 mt-2 justify-center">
-          <a href="https://github.com/Nstar9" target="_blank" rel="noopener noreferrer" className="px-6 py-2 rounded shadow bg-blue-100 hover:bg-blue-200 text-blue-800 border border-blue-200 font-semibold transition">GitHub</a>
-          <a href="https://linkedin.com/in/nirajpatil01" target="_blank" rel="noopener noreferrer" className="px-6 py-2 rounded shadow bg-teal-100 hover:bg-teal-200 text-teal-800 border border-teal-200 font-semibold transition">LinkedIn</a>
+          <a href="https://github.com/Nstar9" target="_blank" rel="noopener noreferrer" className="px-6 py-2 rounded shadow bg-green-100 hover:bg-green-200 text-black-800 border border-green-200 font-semibold transition">GitHub</a>
+          <a href="https://linkedin.com/in/nirajpatil01" target="_blank" rel="noopener noreferrer" className="px-6 py-2 rounded shadow bg-green-100 hover:bg-green-200 text-black-800 border border-green-200 font-semibold transition">LinkedIn</a>
         </div>
       </header>
 
@@ -197,13 +200,13 @@ export default function Portfolio() {
           </p>
           <p className="text-base md:text-lg">
             Currently completing my <b>MS in Technology Management at UIUC</b>, I specialize in building data-driven products that solve complex business problems.<br />
-            My background spans <b>mechanical engineering, pharmaceutical industry</b> experience, and hands-on technical projects in <b>AI, cloud, and data analytics</b>. I bring both <b>technical depth</b> (Python, SQL, AWS) and <b>strategic thinking</b> to product development and cross-functional leadership.
-          </p>
+            My background spans <b>Consulting, Product Operations and Technical project leadership</b> experience. I specialize in building <b>AI, cloud, and data driven </b> Solutions. I bring both <b>technical depth</b> (Python, SQL, AWS) and <b>strategic thinking</b> to product development and cross-functional leadership.
           <p className="text-base md:text-lg">
             <b>What sets me apart:</b> I bridge the gap between technical possibility and business impact. Whether it’s architecting cloud solutions, analyzing market data, or leading product strategy, I thrive at the intersection of <b>technology and business strategy</b>.
           </p>
           <p className="text-base md:text-lg">
-            I’m seeking <b>Technical Product Manager roles</b> where I can leverage my <b>analytical mindset, leadership experience, and passion for building products</b> that scale and create meaningful impact.
+            I’m seeking <b>Technical Product Manager roles, Tech Strategy and Tech Consulting</b> where I can leverage my <b>analytical mindset, leadership experience, and passion for building products</b> that scale and create meaningful impact.
+          </p>
           </p>
         </div>
       </section>
