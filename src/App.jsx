@@ -200,16 +200,19 @@ export default function Portfolio() {
           </p>
           <p className="text-base md:text-lg">
             Currently completing my <b>MS in Technology Management at UIUC</b>, I specialize in building data-driven products that solve complex business problems.<br />
+          </p>
+          <p className="text-base md:text-lg"> 
             My background spans <b>Consulting, Product Operations and Technical project leadership</b> experience. I specialize in building <b>AI, cloud, and data driven </b> Solutions. I bring both <b>technical depth</b> (Python, SQL, AWS) and <b>strategic thinking</b> to product development and cross-functional leadership.
+          </p>  
           <p className="text-base md:text-lg">
             <b>What sets me apart:</b> I bridge the gap between technical possibility and business impact. Whether it’s architecting cloud solutions, analyzing market data, or leading product strategy, I thrive at the intersection of <b>technology and business strategy</b>.
           </p>
           <p className="text-base md:text-lg">
             I’m seeking <b>Technical Product Manager roles, Tech Strategy and Tech Consulting</b> where I can leverage my <b>analytical mindset, leadership experience, and passion for building products</b> that scale and create meaningful impact.
           </p>
-          </p>
         </div>
       </section>
+
 
       {/* Experience & Education */}
       <section id="experience" className="max-w-6xl mx-auto px-8 py-12 grid md:grid-cols-2 gap-12 items-start">
